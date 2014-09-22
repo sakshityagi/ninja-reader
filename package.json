@@ -1,0 +1,21 @@
+{
+  "name": "Ninja-reader",
+  "description": "RSS feed reader app",
+  "author" : "Sakshi Tyagi",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "async": "^0.9.0",
+    "colors": "^0.6.2",
+    "ejs": "*",
+    "express": "3.x",
+    "feedparser": "^0.19.2",
+    "mongoose": "^3.8.16",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "request": "^2.44.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}

@@ -1,0 +1,50 @@
+
+<div class="row">
+    <div style="visibility: visible; animation-name: fadeInLeftBig;"
+         class="col-sm-12 contact section-description wow fadeInLeftBig animated animated">
+        <h2 class="main">{{currentUser.name}}, these are your articles</h2>
+
+    </div>
+</div>
+
+<div class="col-lg-8 col-md-offset-2">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Article</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="article in articles">
+            <td>{{$index +1 }}</td>
+            <td><a ng-href="{{article.url}}" target="_blank">{{article.title}}</a></td>
+            <td>
+                <button type="button" class="btn btn-primary btn-xs" ng-click="showDetails(article)">View</button>
+                <button type="button" class="btn btn-danger btn-xs" ng-click="deleteArticle(article)">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div>
+    <script type="text/ng-template" id="articleContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Details</h3>
+        </div>
+        <div class="modal-body">
+            <h5><a ng-href="{{article.url}}">{{article.title}}</a></h5>
+            <p ng-bind-html="description"></p>
+            <p><strong>Author:</strong> {{article.author || 'NA'}}</p>
+            <p><strong>Published Date:</strong> {{article.publishedDate || 'NA'}}</p>
+            <p><strong>Date Added:</strong> {{dateAdded || 'NA'}}</p>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" ng-click="close()">Close</button>
+        </div>
+    </script>
+</div>

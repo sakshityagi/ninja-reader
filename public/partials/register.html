@@ -1,0 +1,35 @@
+
+<div class="col-sm-12 col-xs-12" ng-show="infoMissing">
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+       Please fill in all values.
+    </div>
+</div>
+
+<div class="col-sm-12 col-xs-12" ng-show="registerFail">
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      Email Id already exist.
+    </div>
+</div>
+
+
+<form class="form-signin" role="form" ng-hide="registerSuccess">
+    <h2 class="form-signin-heading text-center">Register</h2>
+    <hr/>
+    <input type="text" class="form-control" placeholder="Full Name" ng-model="fullName" required autofocus>
+    <input type="email" class="form-control" placeholder="Email address" ng-model="email" required>
+    <input type="password" class="form-control" placeholder="Password" ng-model="password" required>
+
+    <button class="btn btn-lg btn-primary btn-block" type="button" ng-click="register()">Register</button>
+</form>
+
+<div class="col-md-6 col-md-offset-3 text-center" ng-show="registerSuccess">
+    <div class="alert alert-success">
+        <a href="javascript:void(0);" ui-sref="home.login"><strong>Proceed To Login</strong></a>
+    </div>
+</div>
+
+<div class="col-md-6 col-md-offset-3 text-center">
+    Already registered? <a href="javascript:void(0);" ui-sref="home.login"><strong>Login Here</strong></a>
+</div>

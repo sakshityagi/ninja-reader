@@ -1,0 +1,20 @@
+
+<div class="col-sm-12 col-xs-12" ng-show="loginFail">
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Email and password doesn't match! Try again.
+    </div>
+</div>
+
+<form class="form-signin" role="form">
+    <h2 class="form-signin-heading text-center">Login</h2>
+    <hr/>
+    <input type="email" class="form-control" placeholder="Email address" ng-model="email" required>
+    <input type="password" class="form-control" placeholder="Password" ng-model="password" required>
+
+    <button class="btn btn-lg btn-primary btn-block" type="button" ng-click="login()">Login</button>
+</form>
+
+<div class="col-md-6 col-md-offset-3 text-center">
+    Not registered? <a href="javascript:void(0);" ui-sref="home.register"><strong>Register Here</strong></a>
+</div>
